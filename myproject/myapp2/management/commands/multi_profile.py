@@ -18,7 +18,7 @@ class Command(BaseCommand):
                 client.delete()
                 self.stdout.write(f'{client}')
                 i += 1
-        elif kwargs.get('command_number') == 1:
+        elif kwargs.get('command_number') == 2:
             product = True
             while product is not None:
                 product = Product.objects.filter(pk=i).first()

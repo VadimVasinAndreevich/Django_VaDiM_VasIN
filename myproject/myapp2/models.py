@@ -6,7 +6,7 @@ class Client(models.Model):
     email = models.EmailField()
     telephone_number = models.CharField(max_length=100)
     address = models.CharField(max_length=200)
-    date_register = models.DateTimeField(auto_now_add=True)
+    date_register = models.DateField(auto_now_add=False)
 
     def __str__(self):
         return (f'client: {self.name}, email: {self.email}, telephone_number:{self.telephone_number},'
@@ -18,7 +18,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.FloatField()
     count = models.IntegerField()
-    date_add = models.DateTimeField(auto_now_add=True)
+    date_add = models.DateField(auto_now_add=False)
 
     def __str__(self):
         return (f'product: {self.title}, description: {self.description}, price:{self.price},'
@@ -29,7 +29,7 @@ class Order(models.Model):
     customer = models.ForeignKey(Client, on_delete=models.CASCADE)
     products = models.ManyToManyField(Product)
     total_price = models.FloatField()
-    date_order = models.DateTimeField(auto_now_add=True)
+    date_order = models.DateField(auto_now_add=False)
 
     def __str__(self):
         return (f'customer: {self.customer}, products: {self.products}, total_price:{self.total_price},'

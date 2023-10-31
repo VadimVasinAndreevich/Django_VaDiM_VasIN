@@ -1,7 +1,5 @@
 from django.views import View
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import TemplateView
+from django.shortcuts import render
 from myapp2.models import Client, Product, Order
 import datetime
 

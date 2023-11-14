@@ -16,6 +16,7 @@ class Client(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
+    image = models.ImageField()
     price = models.FloatField()
     count = models.IntegerField()
     date_add = models.DateField(auto_now_add=False)
